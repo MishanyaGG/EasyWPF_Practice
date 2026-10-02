@@ -1,0 +1,14 @@
+﻿<Window x:Class="EasyWPF.addEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EasyWPF"
+        mc:Ignorable="d"
+        Title="addEdit" Height="450" Width="800">
+    <StackPanel Margin="50">
+        <TextBox x:Name="Name" Width="300" Margin="15"/>
+        <TextBox x:Name="Age" Width="300" Margin="15"/>
+        <Button Content="Добавить" Width="300" FontSize="25" Click="Button_Click"/>
+    </StackPanel>
+</Window>
