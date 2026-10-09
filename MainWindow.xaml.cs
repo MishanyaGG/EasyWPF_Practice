@@ -19,7 +19,6 @@ namespace EasyWPF
         public MainWindow()
         {
             InitializeComponent();
-            ListPerson.Items.Add(new Person("Тест", 23));
         }
 
         private void add_click(object sender, RoutedEventArgs e)
