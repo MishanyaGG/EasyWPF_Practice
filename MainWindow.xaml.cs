@@ -20,7 +20,13 @@ namespace EasyWPF
         {
             InitializeComponent();
         }
-
+        
+        /// <summary>
+        /// Событие при КНОПКЕ добавления пользователя
+        /// Подписка на событие win_closing_Add()
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void add_click(object sender, RoutedEventArgs e)
         {
             addEdit winEdit = new addEdit();
@@ -29,6 +35,11 @@ namespace EasyWPF
             winEdit.ShowDialog();
         }
 
+        /// <summary>
+        /// Реализация добавления пользователя в список
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void win_closing_Add(object sender, System.ComponentModel.CancelEventArgs e)
         {
             addEdit addEdit = sender as addEdit;
@@ -36,6 +47,11 @@ namespace EasyWPF
                 ListPerson.Items.Add(new Person(addEdit.Name.Text, int.Parse(addEdit.Age.Text)));
         }
 
+        /// <summary>
+        /// Событие при КНОПКЕ удаления пользователя
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void del_click(object sender, RoutedEventArgs e)
         {
             if (ListPerson.SelectedItem != null)
@@ -46,6 +62,12 @@ namespace EasyWPF
             }
         }
 
+        /// <summary>
+        /// Событие при КНОПКЕ редактирования пользователя
+        /// Подписка на событие win_closing_Edit()
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void edit_click(object sender, RoutedEventArgs e)
         {
             if (ListPerson.SelectedItem == null)
@@ -60,6 +82,12 @@ namespace EasyWPF
             winEdit.ShowDialog();
         }
 
+
+        /// <summary>
+        /// Реализация отображения изменных данных пользователя в список
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void win_closing_Edit(object sender, System.ComponentModel.CancelEventArgs e)
         {
             addEdit addEdit = sender as addEdit;
