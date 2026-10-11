@@ -19,11 +19,14 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="0" Content="Добавить" FontSize="24" Click="add_click"/>
-            <Button Grid.Row="1" Content="Удалить" FontSize="24" Click="del_click"/>
-            <Button Grid.Row="2" Grid.RowSpan="2" Content="Редактировать" FontSize="24" Click="edit_click"/>
+            <Button Grid.Row="0" Content="Добавить" FontSize="24" Command="{Binding AddCommand}"/>
+            <Button Grid.Row="1" Content="Удалить" FontSize="24" Command="{Binding DeleteCommand}"/>
+            <Button Grid.Row="2" Grid.RowSpan="2" Content="Редактировать" FontSize="24" Command="{Binding EditCommmand}"/>
         </Grid>
 
-        <ListBox x:Name="ListPerson"/>
+        <ListBox x:Name="ListPerson" 
+                 ItemsSource="{Binding People}"
+                 SelectedItem="{Binding SelectedPerson}"
+                 DisplayMemberPath="Name"/>
     </Grid>
 </Window>

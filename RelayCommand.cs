@@ -34,10 +34,10 @@ namespace EasyWPF
         /// <returns></returns>
         public bool CanExecute(object parameter)
         {
-            if (CanExecute != null)
-                return _canExecute(parameter);
+            if (_canExecute == null)
+                return true;
 
-            return false;
+            return _canExecute(parameter);
         }
 
         /// <summary>

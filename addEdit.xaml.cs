@@ -17,19 +17,22 @@ namespace EasyWPF
     /// </summary>
     public partial class addEdit : Window
     {
-        public addEdit(string name = "", int age = 0)
+        public addEdit(Person person = null)
         {
             InitializeComponent();
-            if (name != "" && age != 0)
-            {
-                Name.Text = name;
-                Age.Text = age.ToString();
-            }
+            DataContext = person ?? new Person("", 0);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            if (!string.IsNullOrWhiteSpace(Name.Text))
+            {
+                this.DialogResult = true;
+            }
+            else
+            {
+                MessageBox.Show("Введите корректное имя");
+            }
         }
     }
 }

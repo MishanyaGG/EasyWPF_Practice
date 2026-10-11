@@ -7,7 +7,7 @@ using System.Text;
 
 namespace EasyWPF
 {
-    internal class Person : IDisposable, INotifyPropertyChanged
+    public class Person : IDisposable, INotifyPropertyChanged
     {
         /// <summary>
         /// Айдишник пользователя (приватный)

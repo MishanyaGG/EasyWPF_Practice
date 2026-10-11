@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="addEdit" Height="450" Width="800">
     <StackPanel Margin="50">
-        <TextBox x:Name="Name" Width="300" Margin="15"/>
-        <TextBox x:Name="Age" Width="300" Margin="15"/>
+        <TextBox x:Name="Name" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Width="300" Margin="15"/>
+        <TextBox x:Name="Age" Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Width="300" Margin="15"/>
         <Button Content="Добавить" Width="300" FontSize="25" Click="Button_Click"/>
     </StackPanel>
 </Window>
