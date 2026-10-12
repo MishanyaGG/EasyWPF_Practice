@@ -7,9 +7,21 @@ namespace EasyWPF
 {
     internal class RelayCommand : ICommand
     {
-        private readonly Action<object> _execute;
+        /// <summary>
+        /// Действие, которое выполнится при нажатии
+        /// </summary>
+        private readonly Action<object> _execute; 
+
+        /// <summary>
+        /// Условие, разрешающее или запрещающее выполнение
+        /// </summary>
         private readonly Func<object, bool> _canExecute;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="execute">Метод действия</param>
+        /// <param name="canExecute">(опционально) метод проверки условия</param>
         public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
             _execute = execute;
@@ -19,6 +31,7 @@ namespace EasyWPF
 
         /// <summary>
         /// Событие, которое уведомляет UI об изменеини возможности выполнения команды
+        /// Сообщает интерфейсу, что состояние кнопки (активна/неактивна) могло измениться
         /// </summary>
         public event EventHandler CanExecuteChanged
         {
@@ -34,6 +47,7 @@ namespace EasyWPF
         /// <returns></returns>
         public bool CanExecute(object parameter)
         {
+            // Если условие не задано, команда всегда выполнима
             if (_canExecute == null)
                 return true;
 
@@ -42,6 +56,7 @@ namespace EasyWPF
 
         /// <summary>
         /// Содержит саму логику, которая должна выполниться
+        /// Метод, выполняющий само действие при нажатии на кнопку
         /// </summary>
         /// <param name="parameter"></param>
         public void Execute(object parameter)

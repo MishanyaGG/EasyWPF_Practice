@@ -21,7 +21,5 @@ namespace EasyWPF
             InitializeComponent();
             DataContext = new MainViewModel();
         }
-        
-        
     }
 }
