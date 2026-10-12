@@ -76,7 +76,7 @@ namespace EasyWPF
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Метод из INotifyPropertyChanged
+        /// Обработка изменения свойств
         /// </summary>
         /// <param name="propertyName">Название параметра, которое будем менять (берет по правилу CallerMemberName - забирает название свойства вызываемого</param>
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
